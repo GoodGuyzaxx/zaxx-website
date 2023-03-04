@@ -4,9 +4,19 @@ body {
     height: 1738px;
     left: calc(50% - 768px/2 - 0.17px);
     top: 0.45px;
-    background-color: #c7ecee;
+    background-color: #3dc1d3;
     font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
 }
+
+.profilePic {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
 
 .continer {
     position: absolute;
@@ -16,12 +26,10 @@ body {
     top: 107.45px;
 }
 
-
 .header {
-    background-color: rgb(191, 186, 186);
+    background-color: #63cdda;
     width: 500px;
     height: 75px;
-    color: #FFFFFF;
     display: flex;
     justify-content: center;
     border-radius: 10px;
