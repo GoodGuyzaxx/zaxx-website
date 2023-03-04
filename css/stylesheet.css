@@ -1,0 +1,29 @@
+body {
+    position: absolute;
+    width: 768px;
+    height: 1738px;
+    left: calc(50% - 768px/2 - 0.17px);
+    top: 0.45px;
+    background-color: #c7ecee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.continer {
+    position: absolute;
+    width: 533.91px;
+    height: 1295.75px;
+    left: calc(50% - 533.91px/2 - 0.22px);
+    top: 107.45px;
+}
+
+
+.header {
+    background-color: rgb(191, 186, 186);
+    width: 500px;
+    height: 75px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
