@@ -1,5 +1,4 @@
 body {
-    position: absolute;
     width: 768px;
     height: 1738px;
     left: calc(50% - 768px/2 - 0.17px);
@@ -17,6 +16,10 @@ ul {
     list-style-type: none;
 }
 
+li {
+    list-style: none;
+}
+
 .continer {
     position: absolute;
     width: 533.91px;
@@ -25,35 +28,45 @@ ul {
     top: 107.45px;
 }
 
-.header {
+header {
     background-color: #63cdda;
     width: 500px;
-    height: 75px;
-    display: flex;
-    justify-content: center;
+    height: 50px;
     border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+header p {
+    display: block;
+    text-align: center;
+    padding: 15px;
+}
+
+.profile {
+    margin-top: 10px;
 }
 
 .profilePic {
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 80px;
+    left: 370px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 9999px;
+    align-items: end;
 }
 
 .btn-porto {
-    width: 147px;
-    height: 40px;
     background: #81E6D9;
     border-radius: 6px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 .btn-porto a {
     display: block;
     text-align: center;
     color: white;
+    padding: 15px;
 }
