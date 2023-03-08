@@ -1,3 +1,8 @@
-.body {
+body {
+    width: 768px;
+    left: calc(50% - 768px/2 - 0.17px);
+    top: 0.45px;
     background-color: #5b4a2f;
+    font-family: Helvetica;
+    color: aliceblue;
 }
