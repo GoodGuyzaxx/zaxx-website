@@ -1,8 +1,18 @@
 body {
+    position: absolute;
     width: 768px;
-    left: calc(50% - 768px/2 - 0.17px);
-    top: 0.45px;
+    left: calc(50% - 768px/2);
+    top: -10.5px;
+}
+
+.bg-main {
     background-color: #5b4a2f;
-    font-family: Helvetica;
     color: aliceblue;
+}
+
+.container {
+    position: absolute;
+    width: 533.91px;
+    left: calc(50% - 533.91px/2);
+    top: 376px;
 }
