@@ -81,10 +81,29 @@ footer {
     background-color: #eadbb9;
     border-radius: 10px;
     font-family: system-ui;
+    margin-top: 25px;
 }
 
 .footer-warp {
-    display: block;
     text-align: center;
     color: black;
+}
+
+.btn-link li {
+    margin-top: 20px;
+}
+
+.btn-link a {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: #eadbb9;
+    opacity: 1;
+    color: black;
+}
+
+.btn {
+    border-radius: 4px;
 }
