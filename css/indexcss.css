@@ -23,7 +23,7 @@ h2 {
 .continer {
     position: relative;
     width: 533.91px;
-    height: 1440px;
+    height: 1100px;
     margin-left: 35%;
     top: 40px;
 }
@@ -65,6 +65,12 @@ header p {
     left: 400px;
     border: 2px solid #91887c;
     border-radius: 100px;
+}
+
+.work p {
+    text-align: justify;
+    line-height: 1.5;
+    text-indent: 1em;
 }
 
 .btn-porto {
@@ -123,6 +129,17 @@ footer {
     font-weight: bold;
 }
 
-.bio p {
-    display: inline-block;
+table {
+    margin-top: 10px;
+}
+
+.td-tab {
+    font-weight: bold;
+}
+
+.id-sp {
+    padding-bottom: 10px;
+    vertical-align: top;
+    text-align: justify;
+    line-height: 1.5;
 }
