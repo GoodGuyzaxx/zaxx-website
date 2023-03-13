@@ -12,6 +12,14 @@ li {
     list-style: none;
 }
 
+h3 {
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
 .continer {
     position: relative;
     width: 533.91px;
@@ -33,8 +41,11 @@ header p {
     color: #000;
 }
 
-.continer h4 {
+.continer h3 {
     text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: 4px;
+    text-decoration-color: black;
 }
 
 .profile {
@@ -107,4 +118,11 @@ footer {
 .btn {
     border-radius: 4px;
 }
+
+.year-bio {
+    font-weight: bold;
+}
+
+.bio p {
+    display: inline-block;
 }
