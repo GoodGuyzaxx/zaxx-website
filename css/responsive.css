@@ -1,0 +1,78 @@
+/* .container {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    top: 40px;
+    margin-left: 400%;
+} */
+
+@media only screen and (min-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    .continer {
+        top: 40px;
+        left: 250px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        width: 100%;
+    }
+
+    .continer {
+        top: 40px;
+        left: 350px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        width: 100%;
+    }
+
+    .continer {
+        top: 40px;
+        left: 650px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .continer {
+        position: relative;
+        width: 100%;
+        height: 1000px;
+        padding-right: 10px;
+        margin-left: 0px;
+        top: 40px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .profilePic {
+        box-sizing: border-box;
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: 70px;
+        left: 260px;
+        border: 2px solid #91887c;
+        border-radius: 100px;
+    }
+
+    .btn-porto {
+        background: #3f7d8b;
+        border-radius: 6px;
+        margin-left: 50px;
+        margin-right: 50px;
+        opacity: 0.9;
+    }
+
+    footer {
+        margin-bottom: 200px;
+    }
+}
