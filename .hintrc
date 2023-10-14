@@ -1,0 +1,13 @@
+{
+  "extends": ["development"],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "text-decoration-thickness" // Ignore, reason https://github.com/mdn/browser-compat-data/pull/19555
+        ]
+      }
+    ]
+  }
+}
