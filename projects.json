@@ -1,0 +1,94 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Buskitoring Android App",
+            "description": "Aplikasi yang dibuat untuk memesan tiket bus tujuan sarmi ke Kota Jayapura dan sebaliknya.",
+            "type": "MOBILE APP",
+            "year": "2025",
+            "image": "public/images/BusKitorangWeb.png",
+            "alt": "Buskitoring Android App",
+            "icon": "fa-solid fa-mobile-screen",
+            "githubUrl": "https://github.com/GoodGuyzaxx/bus-tiket",
+            "technologies": [
+                "Android",
+                "Kotlin",
+                "Payment Gateway",
+                "REST API"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Buskitoring Dashboard and API",
+            "description": "Dashboard and API for Buskitoring App",
+            "type": "WEB APP",
+            "year": "2025",
+            "image": "public/images/BusKitorangWeb.png",
+            "alt": "Buskitoring Dashboard",
+            "icon": "fa-solid fa-server",
+            "githubUrl": "https://github.com/GoodGuyzaxx/bus-tiket",
+            "technologies": [
+                "Laravel",
+                "PHP",
+                "HTML",
+                "JavaScript",
+                "Bootstrap",
+                "MySQL",
+                "REST API"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "HarvestFlow",
+            "description": "Aplikasi yang dibuat sebagai tugas akhir yang dimana aplikasi ini di integrasikan dengan IoT dengan menggunakan ESP32 sebagai microcontroller dan DHT22,Soil Moisture, dan BH1750 sebagai sensor selain digunakan untuk melakukan monitoring tanaman dapat juga kita melakukan prediksi pertumbuhan tanaman cabai untuk saat ini prediksi pertumbuhan tanaman terbatas hanya pada cabai rawit.",
+            "type": "Mobile App",
+            "year": "2025",
+            "image": "public/images/harvestFlow.png",
+            "alt": "HarvestFlow",
+            "icon": "fa-solid fa-mobile-screen",
+            "githubUrl": "https://github.com/GoodGuyzaxx/HarvestFlow",
+            "technologies": [
+                "Kotlin",
+                "Android",
+                "ML Kit",
+                "Python",
+                "ESP32",
+                "Docker",
+                "Arduino"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "WeScApp",
+            "description": "Aplikasi yang dibuat sebagai Project Capstone pada Bangkit Academy, Berbasis Mobile Android dengan menggunakan Kotlin yang dibuat untuk membantu mapala atau penjelajah hutan ketika mereka kehabisan Stock Makanan dimana aplikasi dapat mengscan suatu tanaman apakah bisa dimakan atau tidak dan akan diberi panduan bagaimana cara mengolah tanaman tersebut.",
+            "type": "Mobile App",
+            "year": "2023",
+            "image": "public/images/portscan.png",
+            "alt": "WeScApp",
+            "icon": "fa-solid fa-mobile-screen",
+            "githubUrl": "https://github.com/CH2-PS061/WeScApp",
+            "technologies": [
+                "Kotlin",
+                "Android",
+                "ML Kit"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Backend and Dashboard for kantin App",
+            "description": "Backend dan dashboard admin untuk aplikasi mobile yang dibuat dengan Laravel. Sistem ini memiliki fitur manajemen user, monitoring transaksi, dan laporan keuangan dengan antarmuka yang user-friendly.",
+            "type": "Web App",
+            "year": "2024",
+            "image": "public/images/portscan.png",
+            "alt": "Kantin Dashboard",
+            "icon": "fa-solid fa-server",
+            "githubUrl": "#",
+            "technologies": [
+                "Laravel",
+                "PHP",
+                "MySQL",
+                "Bootstrap"
+            ]
+        }
+    ]
+}

@@ -5,58 +5,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <script src="lib/fontawsome/js/all.min.js"></script>
   <title>Dewantara | Project Showcase</title>
+
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Dewantara</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html#home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#bio" class="nav-link">Bio</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="porto.html" class="nav-link">Projects</a>
+        </li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
-    <header>
+    <header class="portfolio-header">
       <h1>My Projects</h1>
     </header>
 
-    <main>
-      <section class="project">
-        <!-- <img src="public/images/project1.jpg" alt="Screenshot of Project 1" class="project-image"> -->
-        <div class="project-description">
-          <h2>Project 1: Mobile App</h2>
-          <p>Aplikasi yang dibuat sebagai Project Capstone pada Bangkit Academy, Berbasis Mobile Android dengan
-            menggunakn Kotlin yang dibuat untuk membantu mapala atau penjelajah hutan ketika mereka kehabisan Stock
-            Makanan dimana aplikasi dapat mengscan suatau tanaman apakah bisa dimakan atau tidak dan akan diberi panduan
-            bagimana cara mengelolah tanaman tersenut.</p>
-          <!-- <a href="#" class="btn">View Details</a> -->
-        </div>
-      </section>
+    <main class="projects-grid" id="projects-container">
 
-      <section class="project">
-        <!-- <img src="public/images/project2.jpg" alt="Screenshot of Project 2" class="project-image"> -->
-        <div class="project-description">
-          <h2>Project 2: Mobile App</h2>
-          <p>Aplikasi Android yang dibuat dengan Kotlin, Aplikasi Kantin Untuk Kampus Universitas Doktro Husni
-            Ingratubun Papua </p>
-          <!-- <a href="#" class="btn">View Details</a> -->
-        </div>
-      </section>
+      <!-- Projects will be loaded dynamically from JSON -->
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading projects...</p>
+      </div>
 
-      <section class="project">
-        <!-- <img src="public/images/project3.jpg" alt="Screenshot of Project 3" class="project-image"> -->
-        <div class="project-description">
-          <h2>Project 3: Web Application</h2>
-          <p>Backend Untuk Aplikasi Mobile yang dibuat dengan Laravel dan memiliki dashbaord Super Admin.</p>
-          <!-- <a href="#" class="btn">View Details</a> -->
-        </div>
-      </section>
     </main>
 
     <footer>
       <p>
-        © 2023 Dewantara. Made with
-        <i class="fa-solid fa-heart" style="color: red;"></i>
+        Dewantara, made with
+        <span class="icon-small icon-red">
+          <i class="fa-solid fa-heart"></i>
+        </span>
       </p>
     </footer>
   </div>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', function () {
+          mobileMenu.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          navMenu.classList.remove('active');
+        }));
+      }
+
+      // Load projects from JSON
+      loadProjects();
+    });
+
+    async function loadProjects() {
+      try {
+        const response = await fetch('projects.json');
+        if (!response.ok) {
+          throw new Error('Failed to load projects');
+        }
+        const data = await response.json();
+        renderProjects(data.projects);
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        showError();
+      }
+    }
+
+    function renderProjects(projects) {
+      const container = document.getElementById('projects-container');
+      const loading = document.getElementById('loading');
+
+      // Remove loading indicator
+      if (loading) {
+        loading.remove();
+      }
+
+      // Clear container
+      container.innerHTML = '';
+
+      // Render each project
+      projects.forEach(project => {
+        const projectCard = createProjectCard(project);
+        container.appendChild(projectCard);
+      });
+    }
+
+    function createProjectCard(project) {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+
+      const githubLink = project.githubUrl !== '#' ?
+        `<a href="${project.githubUrl}" target="_blank" rel="noopener">` : '';
+
+      const githubLinkClose = project.githubUrl !== '#' ? '</a>' : '';
+
+      card.innerHTML = `
+        ${githubLink}
+          <div class="project-image-holder">
+            <div class="image-placeholder">
+              <img src="${project.image}" alt="${project.alt}">
+            </div>
+          </div>
+        ${githubLinkClose}
+        
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="${project.icon}"></i>
+          </div>
+          <div class="project-meta">
+            <span class="project-type">${project.type}</span>
+            <span class="project-year">${project.year}</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h2>${project.title}</h2>
+          <p>${project.description}</p>
+          <div class="project-tech">
+            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+          </div>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function showError() {
+      const container = document.getElementById('projects-container');
+      const loading = document.getElementById('loading');
+
+      if (loading) {
+        loading.remove();
+      }
+
+      container.innerHTML = `
+        <div class="error-message">
+          <i class="fa-solid fa-exclamation-triangle"></i>
+          <h3>Failed to load projects</h3>
+          <p>Please try refreshing the page or check your internet connection.</p>
+        </div>
+      `;
+    }
+  </script>
 </body>
 
 </html>

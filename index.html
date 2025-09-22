@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 
@@ -12,10 +16,39 @@
 
   <script src="lib/fontawsome/js/all.min.js"></script>
 
-
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="#home">Dewantara</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#bio" class="nav-link">Bio</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/GoodGuyzaxx" class="nav-link"><i class="fa-brands fa-github"></i></a>
+        </li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
-    <header>
+    <header id="home">
       <p>Hello, I'm an indie app developer based in Indonesia!</p>
     </header>
 
@@ -25,24 +58,18 @@
         <p>Ordinary tech enthusiast</p>
       </div>
 
-      <img class="profile-pic" src="public/images/favPic.jpeg" alt="profilepic" />
+      <img class="profile-pic" src="public/images/x_profile.png" alt="profilepic" />
     </div>
 
-    <div class="work">
+    <div class="work" id="about">
       <h3 class="text-underline">About Me</h3>
       <p>
-        Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan
-        di Universitas Doktor Husni Ingratubun Papua. Meskipun saya belum lulus, saya telah
-        memiliki kemampuan dalam bidang teknologi informasi yang cukup baik
-        dan memiliki semangat yang tinggi untuk belajar lebih banyak lagi.
-        Saya percaya bahwa dengan upaya dan kerja keras yang terus menerus,
-        saya akan mampu meraih gelar sarjana dan menjadi seorang profesional
-        yang handal di masa depan.
+        Final semester Computer Science student with 1 year experience as Full Stack Mobile Developer. Having skill in mobile application development and enthusiastic to learn new technology. Have a strong personality in dealing with software development problems.
+        My technical skills include frontend and backend development for mobile applications, with a focus on creating an optimal user experience. Always open to new collaboration and learning opportunities in this fast-paced technology industry
       </p>
       <div class="btn-porto">
         <a href="porto.html">
           Project Showcase&nbsp;
-
           <span class="icon-large">
             <i class="fa-solid fa-chevron-right"></i>
           </span>
@@ -50,12 +77,12 @@
       </div>
     </div>
 
-    <div class="bio">
+    <div class="bio" id="bio">
       <h3 class="text-underline">Bio</h3>
       <div class="bio-history">
         <div class="bio-history-item">
           <span>2002</span>
-          <p>Lahir di Abepura, Jayapura Indonesia.</p>
+          <p>Lahir di Jayapura Indonesia.</p>
         </div>
         <div class="bio-history-item">
           <span>2020</span>
@@ -81,10 +108,16 @@
             Membantu Menngajar salah satu matakuliah yaitu Pemrogramaan Mobile.
           </p>
         </div>
+        <div class="bio-history-item">
+          <span>2025</span>
+          <p>
+            Freelance Developer sebagai Mobile Developer dan Web Developer
+          </p>
+        </div>
       </div>
     </div>
 
-    <div class="linktree">
+    <div class="linktree" id="contact">
       <h3 class="text-underline">On Web</h3>
       <div class="btn-link">
         <a href="https://github.com/GoodGuyzaxx" target="_blank" rel="noopener">
@@ -121,6 +154,27 @@
       </p>
     </footer>
   </div>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', function () {
+          mobileMenu.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          navMenu.classList.remove('active');
+        }));
+      }
+    });
+  </script>
 </body>
 
 </html>
